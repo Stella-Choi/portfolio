@@ -25,7 +25,20 @@
   --weight-bold: 700;
   --weight-semi-bold: 600;
   --weight-regular: 400;
+
+  /* Size */
+  --size-borderoradius:4px;
+
 }
+
+
+
+body{ margin:0; 
+      font-family: 'Open Sans', sans-serif;
+      cursor:default;
+    }
+a{text-decoration: none;color: var(--color-white);}
+ul, ol{list-style: none;padding-left: 0;}
 
 /* Typography */
 
@@ -62,3 +75,32 @@ p {
   box-sizing: border-box;
 }
 
+/* Navbar */
+#navbar{
+display: flex;
+justify-content: space-between;
+background-color: var(--color-pink);
+align-items: center;
+color: var(--color-white);
+}
+
+.navbar__menu{
+  display: flex;
+}
+
+.navbar__logo{font-size: var(--font-medium);
+font-weight: var(--weight-semi-bold);}
+
+.navbar__menu__item{
+  padding: 8px 12px;
+  margin: 0 4px;
+  cursor:pointer;
+  border-radius: var(--size-borderoradius);
+}
+.navbar__menu__item.active{
+  border: 1px solid var(--color-white);
+}
+
+.navbar__menu__item:hover{
+  background-color: var(--color-dark-pink);
+}
