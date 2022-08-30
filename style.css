@@ -33,6 +33,10 @@
   --animation-duration: 300ms;
 }
 
+* {
+  scroll-margin-top: 50px;
+}
+
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
