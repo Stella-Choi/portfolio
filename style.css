@@ -33,10 +33,6 @@
   --animation-duration: 300ms;
 }
 
-* {
-  scroll-margin-top: 50px;
-}
-
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -94,6 +90,7 @@ p {
 /* Unoversal tags */
 * {
   box-sizing: border-box;
+  scroll-margin-top: 50px;
 }
 
 /* Navbar */
@@ -107,11 +104,12 @@ p {
   color: var(--color-white);
   transition: all var(--animation-duration) ease-in-out;
   z-index: 1;
+  padding: 8px;
 }
 
 #navbar.navbar--dark {
   background-color: var(--color-pink);
-  padding: 8px;
+  padding: 16px;
 }
 
 .navbar__menu {
@@ -126,6 +124,7 @@ p {
 .navbar__menu__item {
   padding: 8px 12px;
   margin: 0 4px;
+  font-size: var(--font-regular);
   cursor: pointer;
   border-radius: var(--size-border-radius);
   border: 1px solid transparent;
@@ -139,6 +138,15 @@ p {
   background-color: var(--color-dark-pink);
   border-radius: var(--size-border-radius);
   border: 1px solid var(--color-white);
+}
+
+.navbar__toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  display: none;
 }
 
 /* Home */
@@ -295,6 +303,8 @@ p {
 }
 
 .category__btn {
+  width: 180px;
+  height: 50px;
   border: 1px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
@@ -383,7 +393,7 @@ p {
 }
 
 .project__description h3 {
-  color: white;
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -391,10 +401,10 @@ p {
   display: block;
   position: relative;
   left: 50%;
-  width: 25px;
+  width: 50px;
   height: 2px;
   background-color: var(--color-dark-white);
-  margin-left: -12px;
+  transform: translateX(-50%);
   margin-top: 8px;
 }
 
@@ -494,3 +504,60 @@ p {
 }
 
 /* For below 768px screen width */
+
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--color-pink);
+  }
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .navbar__menu.open {
+    display: block;
+  }
+
+  .about__majors {
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .major {
+    margin-top: 38px;
+  }
+
+  .academy__container {
+    margin-top: 80px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .work__categories {
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
+
+  .category__btn {
+    margin-top: 4px;
+  }
+
+  .testimonials_avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
