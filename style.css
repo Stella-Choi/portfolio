@@ -109,7 +109,7 @@ p {
 
 #navbar.navbar--dark {
   background-color: var(--color-pink);
-  padding: 16px;
+  padding: 8px;
 }
 
 .navbar__menu {
@@ -179,6 +179,10 @@ p {
   padding: 8px 12px;
   border: 2px solid white;
   border-radius: var(--size-border-radius);
+}
+
+.home__contact:hover {
+  background-color: var(--color-orange);
 }
 
 /* Section common*/
@@ -303,7 +307,8 @@ p {
 }
 
 .category__btn {
-  width: 180px;
+  position: relative;
+  width: 200px;
   height: 50px;
   border: 1px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
@@ -331,9 +336,9 @@ p {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
-  top: -20px;
-  left: 4px;
+  position: absolute;
+  top: -25px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -504,16 +509,30 @@ p {
 }
 
 /* For below 768px screen width */
+:root {
+  /* Font size */
+  --font-large: 30px;
+  --font-medium: 18px;
+  --font-regular: 16px;
+  --font-small: 14px;
+  --font-micro: 12px;
+}
 
 @media screen and (max-width: 768px) {
-  .navbar__toggle-btn {
-    display: block;
-  }
   #navbar {
     flex-direction: column;
     align-items: flex-start;
     background-color: var(--color-pink);
+    padding: 16px;
   }
+
+  .navbar__toggle-btn {
+    display: block;
+    top: 10px;
+    right: 10px;
+    font-size: var(--font-medium);
+  }
+
   .navbar__menu {
     flex-direction: column;
     text-align: center;
@@ -525,6 +544,10 @@ p {
     display: block;
   }
 
+  .section {
+    padding: 16px;
+  }
+
   .about__majors {
     flex-direction: column;
     margin-top: 0;
@@ -532,7 +555,7 @@ p {
   }
 
   .major {
-    margin-top: 38px;
+    margin-top: 30px;
   }
 
   .academy__container {
@@ -541,6 +564,14 @@ p {
 
   .skillset {
     flex-direction: column;
+  }
+
+  .category__btn {
+    flex-direction: column;
+    align-items: center;
+    margin: 2px 0;
+    width: 100%;
+    margin-top: 4px;
   }
 
   .work__categories {
@@ -552,12 +583,31 @@ p {
     flex-grow: 1;
   }
 
-  .category__btn {
-    margin-top: 4px;
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonials_avatar {
+    width: 120px;
+    height: 120px;
   }
 
-  .testimonials_avatar {
-    width: 80px;
-    height: 80px;
+  .testimonials_avatar:nth-child(even),
+  .testimonials_avatar:nth-child(odd) {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .arrow-up {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    line-height: 40px;
+    right: 18px;
+    bottom: 18px;
   }
 }
