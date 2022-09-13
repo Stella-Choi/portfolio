@@ -402,6 +402,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .project.invisible {
@@ -415,6 +416,7 @@ p {
 }
 
 .project__description {
+  font-weight: var(--weight-regular);
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -430,12 +432,13 @@ p {
 }
 
 .project:hover .project__description {
-  opacity: 0.8;
+  opacity: 0.9;
   transform: translateY(0);
 }
 
 .project__description h3 {
   color: var(--color-orange);
+  font-weight: var(--weight-semi-bold);
 }
 
 .project__description h3:after {
