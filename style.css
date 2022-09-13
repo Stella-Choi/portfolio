@@ -438,7 +438,7 @@ p {
 
 .project__description h3 {
   color: var(--color-peach-pink);
-  font-weight: var(--weight-semi-bold);
+  /* font-weight: var(--weight-semi-bold); */
 }
 
 .project__description h3:after {
